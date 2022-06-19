@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_04_134803) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_19_025934) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -222,8 +222,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_134803) do
     t.bigint "company_id", null: false
     t.string "title", null: false
     t.text "description", default: ""
-    t.date "start_date", null: false
-    t.date "end_date", null: false
+    t.date "start_date"
+    t.date "end_date"
     t.date "deadline"
     t.string "location", default: ""
     t.string "target", default: ""
