@@ -1,8 +1,6 @@
 class Internship < ApplicationRecord
   validates :title, presence: true, length: { maximum: 100 }, uniqueness: { scope: :company_id }
   validates :description, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true, comparison: { greater_than_or_equal_to: :start_date }
   validates :internship_attendance_type_id, presence: true
   validates :internship_category_id, presence: true
 
@@ -21,7 +19,11 @@ class Internship < ApplicationRecord
   end
 
   def terms
-    (end_date - start_date).to_i + 1
+    if start_date.present? && end_date.present?
+      ((end_date - start_date).to_i + 1).to_s + '日間'
+    else
+      '未定'
+    end
   end
 
   def terms_label
@@ -44,6 +46,6 @@ class Internship < ApplicationRecord
   private
 
   ransacker :terms do
-    Arel.sql("case when end_date - start_date + 1 = 1 then '1日' when end_date - start_date + 1 >= 2 and end_date - start_date + 1 <= 4 then '2~4日' when end_date - start_date + 1 = 5 then '5日' else '5日より多い' end")
+    Arel.sql("start_date is not null and end_date is not null and case when end_date - start_date + 1 = 1 then '1日' when end_date - start_date + 1 >= 2 and end_date - start_date + 1 <= 4 then '2~4日' when end_date - start_date + 1 = 5 then '5日' else '5日より多い' end")
   end
 end

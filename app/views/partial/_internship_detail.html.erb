@@ -18,16 +18,19 @@
   <tbody>
     <tr class="table-tr">
       <th class="table-th">期間</th>
-      <td class="table-td"><%= internship.terms %>日間</td>
+      <td class="table-td"><%= internship.terms %></td>
     </tr>
     <tr class="table-tr">
-      <% if internship.terms > 1 %>
+      <% if internship.terms == '1日間' %>
+      <th class="table-th">実施日</th>
+      <td class="table-td"><%= l internship.start_date, format: :ymd %></td>
+      <% elsif internship.terms == '未定' %>
+      <th class="table-th">実施日</th>
+      <td class="table-td">未定</td>
+      <% else %>
       <th class="table-th">日程</th>
       <td class="table-td"><%= l internship.start_date, format: :ymd %> ~ <%= l internship.end_date, format: :ymd %>
       </td>
-      <% else %>
-      <th class="table-th">実施日</th>
-      <td class="table-td"><%= l internship.start_date, format: :ymd %></td>
       <% end %>
     </tr>
     <tr class="table-tr">
