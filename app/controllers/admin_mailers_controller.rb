@@ -11,9 +11,9 @@ class AdminMailersController < ApplicationController
     end
 
     case params[:group]
-    when 'student' then @emails = Student.pluck(:email)
+    when 'student' then @emails = Student.joins(:student_detail).where(student_detail: { disable_notification: false }).pluck(:email)
     when 'employee' then @emails = Employee.pluck(:email)
-    when 'all' then @emails = Student.pluck(:email) + Employee.pluck(:email)
+    when 'all' then @emails = Student.joins(:student_detail).where(student_detail: { disable_notification: false }).pluck(:email) + Employee.pluck(:email)
     else
       redirect_to request.referer, alert: '配信先の指定が不正です'
       return
