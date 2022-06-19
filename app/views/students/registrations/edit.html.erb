@@ -12,6 +12,7 @@
   <%= f_student_detail.date_field :birthday %>
   <%= f_student_detail.text_field :school_name %>
   <%= f_student_detail.text_field :department %>
+  <%= f_student_detail.check_box :disable_notification %>
   <% end %>
 
   <%= f.submit "変更する", class: "btn btn-primary text-white w-100 my-3", "data-turbo": false %>

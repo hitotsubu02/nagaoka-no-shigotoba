@@ -57,7 +57,7 @@ class Students::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [
       student_detail_attributes: [
-        :id, :name, :birthday, :school_name, :department
+        :id, :name, :birthday, :school_name, :department, :disable_notification
       ]
     ])
   end
