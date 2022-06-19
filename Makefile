@@ -2,7 +2,7 @@ precompile-stg:
 	RAILS_ENV=staging bin/rails assets:precompile
 
 precompile-prod:
-	RAILS_ENV=production bin/rails db:migrate
+	RAILS_ENV=production bin/rails assets:precompile
 
 restart-stg:
 	systemctl restart puma-stg.service
