@@ -2,20 +2,20 @@
   <div class="list-group list-group-flush mx-2">
     <% courses.each do |course| %>
     <div class="list-group-item list-group-item-card mb-2">
-      <div class="flex-1 py-4">
+      <div class="flex-1 py-4 flex items-center">
         <% if course.thumbnail.representable? %>
         <%= link_to image_tag(course.thumbnail.representation(resize_to_limit: [800, 800]), class: "w-100"), course %>
         <% else %>
         <%= link_to image_tag("no_image.png", class: 'w-100'), course %>
         <% end %>
       </div>
-      <div class="flex-[2] px-6 py-4">
+      <div class="flex-[2] mx-0 md:px-6 py-4">
         <span class="badge mb-2"
           style="background-color: <%= course.course_category.bg_color %>;"><%= course.course_category.name %></span>
         <div class="mb-2">
           <%= link_to course.title, course, class: 'card-title' %>
         </div>
-        <div class="mb-4 text-slate-600"><%= simple_format(course.description) %></div>
+        <div class="mb-4 text-slate-600 line-clamp-3"><%= simple_format(course.description) %></div>
         <div class="mb-2"><span class="card-info-th">開催日</span>　<%= l course.event_date, format: :ymd %>
         </div>
         <div><span class="card-info-th">参加方法</span><%= course.course_attendance_type.name %></div>

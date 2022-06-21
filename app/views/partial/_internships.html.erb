@@ -5,7 +5,7 @@
   <div class="list-group list-group-flush mx-2">
     <% internships.each do |internship| %>
     <div class="list-group-item list-group-item-card mb-2">
-      <div class="flex-1 py-4">
+      <div class="flex-1 py-4 flex items-center">
         <% if internship.thumbnail.representable? %>
         <%= link_to image_tag(internship.thumbnail.representation(resize_to_limit: [800, 800]), class: "w-100"), internship %>
         <% else %>
@@ -13,7 +13,7 @@
         <% end %>
       </div>
 
-      <div class="flex-[2] px-6 py-4">
+      <div class="flex-[2] mx-0 md:px-6 py-4">
         <div class="badge bg-primary mb-2">
           <%= internship.company.business_category.name %>
         </div>
