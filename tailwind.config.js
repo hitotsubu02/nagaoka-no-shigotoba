@@ -17,6 +17,9 @@ module.exports = {
         'warning': '#F9DB57',
         'danger': '#DA6272',
       }
-    }
-  }
+    },
+  },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ]
 }
