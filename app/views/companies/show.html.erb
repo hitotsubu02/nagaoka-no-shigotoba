@@ -11,7 +11,7 @@
     <tbody>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.company.company_url' %></th>
-        <td class="table-td"><%= link_to @company.company_url %></td>
+        <td class="table-td"><%= link_to @company.company_url, @company.company_url %></td>
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.business_category.name' %></th>
@@ -51,7 +51,7 @@
   </div>
 
   <h4 class="my-3">募集中のインターンシップ情報</h4>
-  
+
   <%= render 'partial/internships', internships: @company.internships %>
 
   <div class="mt-5">
