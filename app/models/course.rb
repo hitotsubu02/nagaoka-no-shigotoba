@@ -10,4 +10,8 @@ class Course < ApplicationRecord
   has_many :student_course_orders, dependent: :destroy
 
   has_one_attached :thumbnail
+
+  def short_description
+    description.split(/\n/).slice(0, 3).join("\n")
+  end
 end
