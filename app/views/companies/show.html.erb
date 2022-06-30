@@ -44,13 +44,13 @@
     </tbody>
   </table>
 
-  <div class="my-3 text-right">
+  <div class="my-3 text-right hidden">
     <%= link_to "https://nagaoka-shukatsuondemand.jp/all-movie/", :target=>["_blank"], class: "btn btn-primary text-white" do %>
     <i class="bi bi-play-circle-fill"></i> 紹介動画を見る
     <% end %>
   </div>
 
-  <h4 class="my-3">募集中のインターンシップ情報</h4>
+  <h4 class="my-5">募集中のインターンシップ情報</h4>
 
   <%= render 'partial/internships', internships: @company.internships %>
 
