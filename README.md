@@ -1,6 +1,9 @@
 ## セットアップ
 
 ```sh
+$ cp .env.sample .env
+# .envに情報を記入する
+
 $ docker-compose build
 $ docker-compose run --rm web bin/rails db:create
 $ docker-compose run --rm web bin/rails db:migrate
