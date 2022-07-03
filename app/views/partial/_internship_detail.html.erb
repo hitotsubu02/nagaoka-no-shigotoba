@@ -24,9 +24,9 @@
       <% if internship.terms == '1日間' %>
       <th class="table-th">実施日</th>
       <td class="table-td"><%= l internship.start_date, format: :ymd %></td>
-      <% elsif internship.terms == '未定' %>
+      <% elsif internship.terms == '随時' %>
       <th class="table-th">実施日</th>
-      <td class="table-td">未定</td>
+      <td class="table-td"><%= internship.terms %></td>
       <% else %>
       <th class="table-th">日程</th>
       <td class="table-td"><%= l internship.start_date, format: :ymd %> ~ <%= l internship.end_date, format: :ymd %>

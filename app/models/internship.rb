@@ -22,7 +22,7 @@ class Internship < ApplicationRecord
     if start_date.present? && end_date.present?
       ((end_date - start_date).to_i + 1).to_s + '日間'
     else
-      '未定'
+      '随時'
     end
   end
 
