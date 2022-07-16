@@ -28,7 +28,11 @@
         </div>
         <div>
           <span class="card-info-th">実施期間</span>
+          <% if internship.terms == 'term_text' %>
+          <%= internship.term_text%>
+          <% else %>
           <%= internship.terms %>
+          <% end %>
         </div>
       </div>
     </div>

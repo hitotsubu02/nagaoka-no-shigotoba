@@ -18,15 +18,19 @@
   <tbody>
     <tr class="table-tr">
       <th class="table-th">期間</th>
+      <% if internship.terms == 'term_text' %>
+      <td class="table-td"><%= internship.term_text %></td>
+      <% else %>
       <td class="table-td"><%= internship.terms %></td>
+      <% end %>
     </tr>
     <tr class="table-tr">
       <% if internship.terms == '1日間' %>
       <th class="table-th">実施日</th>
       <td class="table-td"><%= l internship.start_date, format: :ymd %></td>
-      <% elsif internship.terms == '随時' %>
+      <% elsif internship.terms == '随時' || internship.terms == 'term_text' %>
       <th class="table-th">実施日</th>
-      <td class="table-td"><%= internship.terms %></td>
+      <td class="table-td">随時</td>
       <% else %>
       <th class="table-th">日程</th>
       <td class="table-td"><%= l internship.start_date, format: :ymd %> ~ <%= l internship.end_date, format: :ymd %>

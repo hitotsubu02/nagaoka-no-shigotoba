@@ -22,6 +22,8 @@ class Internship < ApplicationRecord
   def terms
     if start_date.present? && end_date.present?
       ((end_date - start_date).to_i + 1).to_s + '日間'
+    elsif term_text.present?
+      'term_text'
     else
       '随時'
     end
