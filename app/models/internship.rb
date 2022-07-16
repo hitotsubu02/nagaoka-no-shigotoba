@@ -4,6 +4,7 @@ class Internship < ApplicationRecord
   validates :internship_attendance_type_id, presence: true
   validates :internship_category_id, presence: true
 
+
   belongs_to :company
   belongs_to :internship_category
   belongs_to :internship_attendance_type

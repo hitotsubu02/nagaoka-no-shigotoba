@@ -58,6 +58,7 @@ ja:
         description: 内容
         start_date: 開始日
         end_date: 終了日
+        term_text: 実施期間（テキスト）
         deadline: 申し込み締切日
         location: 実施場所
         target: 対象学生
