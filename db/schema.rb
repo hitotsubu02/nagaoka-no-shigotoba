@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_19_025934) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_16_092329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -235,6 +235,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_19_025934) do
     t.boolean "is_public", default: true
     t.bigint "internship_category_id", null: false
     t.bigint "internship_attendance_type_id", null: false
+    t.string "term_text"
     t.index ["company_id"], name: "index_internships_on_company_id"
     t.index ["internship_attendance_type_id"], name: "index_internships_on_internship_attendance_type_id"
     t.index ["internship_category_id"], name: "index_internships_on_internship_category_id"
