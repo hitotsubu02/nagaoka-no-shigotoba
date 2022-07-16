@@ -86,6 +86,7 @@ ja:
         course_category_id: 講座カテゴリー
         course_attendance_type_id: 講座参加方法
         event_date: 開催日
+        event_start_time: 開始時間
         deadline: 申し込み締切日
         place: 開催場所
         target: 対象
