@@ -9,6 +9,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     description: Field::Text,
     start_date: Field::Date,
     end_date: Field::Date,
+    term_text: Field::String,
     deadline: Field::Date,
     location: Field::String,
     target: Field::String,
@@ -38,6 +39,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     description
     start_date
     end_date
+    term_text
     deadline
     location
     target
@@ -57,6 +59,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     description
     start_date
     end_date
+    term_text
     deadline
     location
     target
