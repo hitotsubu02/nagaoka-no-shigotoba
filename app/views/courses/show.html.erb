@@ -23,8 +23,13 @@
         <td class="table-td"><%= @course.course_attendance_type.name %></td>
       </tr>
       <tr>
-        <th class="table-th"><%= t 'activerecord.attributes.course.event_date' %></th>
-        <td class="table-td"><%= l @course.event_date, format: :ymd %></td>
+        <th class="table-th">開催日時</th>
+        <td class="table-td">
+          <%= l @course.event_date, format: :ymd %>
+          <% if @course.event_start_time.present? %>
+          <%= l @course.event_start_time, format: :hm %>~
+          <% end %>
+        </td>
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.deadline' %></th>

@@ -8,6 +8,7 @@ class CourseDashboard < Administrate::BaseDashboard
     course_category: Field::BelongsTo,
     course_attendance_type: Field::BelongsTo,
     event_date: Field::Date,
+    event_start_time: Field::Time,
     deadline: Field::Date,
     place: Field::String,
     target: Field::String,
@@ -34,6 +35,7 @@ class CourseDashboard < Administrate::BaseDashboard
     course_category
     course_attendance_type
     event_date
+    event_start_time
     deadline
     place
     target
@@ -51,6 +53,7 @@ class CourseDashboard < Administrate::BaseDashboard
     course_category
     course_attendance_type
     event_date
+    event_start_time
     deadline
     place
     target

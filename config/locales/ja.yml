@@ -315,3 +315,4 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
       ymd: "%Y年%-m月%-d日"
+      hm: "%H:%M"
