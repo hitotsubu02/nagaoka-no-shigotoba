@@ -36,21 +36,33 @@
         <% if @course.deadline.present? %>
         <td class="table-td"><%= l @course.deadline, format: :ymd %></td>
         <% else %>
-        <td class="table-td"></td>
+        <td class="table-td">－</td>
         <% end %>
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.place' %></th>
-        <td class="table-td"><%= @course.place %></td>
+        <% if @course.place.present? %>
+        　<td class="table-td"><%= @course.place %></td>
+        <% else %>
+        　<td class="table-td">－</td>
+        <% end %>
       </tr>
       <tr>
-        <th class="table-th"><%= t 'activerecord.attributes.course.target' %></th>
-        <td class="table-td"><%= @course.target %></td>
+      　<th class="table-th"><%= t 'activerecord.attributes.course.target' %></th>
+        <% if @course.target.present? %>
+         <td class="table-td"><%= @course.target %></td>
+        <% else %>
+        　<td class="table-td">－</td>
+        <% end %>
       </tr>
       <tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.acceptable_number' %></th>
-        <td class="table-td"><%= @course.acceptable_number %>名</td>
+        <% if @course.acceptable_number.present? %>
+         <td class="table-td"><%= @course.acceptable_number %></td>
+        <% else %>
+         　<td class="table-td">－</td>
+        <% end %>
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.others' %></th>
