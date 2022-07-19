@@ -12,7 +12,7 @@ class CourseDashboard < Administrate::BaseDashboard
     deadline: Field::Date,
     place: Field::String,
     target: Field::String,
-    acceptable_number: Field::Number,
+    acceptable_number: Field::Text,
     others: Field::Text,
     announcement: Field::Text,
     created_at: Field::DateTime,
